@@ -86,6 +86,8 @@ class SensorConfig {
     _brightnessSubscription = _brightnessController.stream
         .debounceTime(const Duration(milliseconds: 500))
         .listen((value) => CamerawesomePlugin.setBrightness(value));
+
+    brightness$ = _brightnessController.stream;
   }
 
   Future<void> setZoom(double zoom) async {
